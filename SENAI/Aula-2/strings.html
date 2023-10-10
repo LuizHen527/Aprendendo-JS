@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Criar formulario para receber um nome
+    do usuario e substituir por um nickname
+    ao clicar do botao o nick name sera exibido na tela -->
+
+    <form action="" onsubmit="mudarNick">
+        <label for="nome">Digite seu nome</label>
+        <input type="text" id="nome">
+
+        <label for="nick">Digite o nick</label>
+        <input type="text" id="nick">
+
+
+        
+        <p id="nickname"></p>
+        <button>Submit</button>
+    </form>
+    
+
+    <script>
+        function mudarNick(){
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let nick = document.getElementById("nick").value;
+
+            let frase = (`Ola, ${nick}`)
+
+            document.getElementById('nickname').innerHTML = nome.replace(nome, `Ola, ${nick}`);
+        }
+        
+    </script>
+</body>
+</html>
+
+<!-- ctrl + b - selecao multipla
+
+ctrl + / - comenta liha -->
