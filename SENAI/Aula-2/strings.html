@@ -11,16 +11,16 @@
     do usuario e substituir por um nickname
     ao clicar do botao o nick name sera exibido na tela -->
 
-    <form action="" onsubmit="mudarNick">
+    <form onsubmit="mudarNick()">
         <label for="nome">Digite seu nome</label>
         <input type="text" id="nome">
 
         <label for="nick">Digite o nick</label>
         <input type="text" id="nick">
 
-
+        <br>
         
-        <p id="nickname"></p>
+        <p>Resultado <strong id="nickname"></strong></p>
         <button>Submit</button>
     </form>
     
@@ -29,12 +29,13 @@
         function mudarNick(){
             event.preventDefault();
 
-            let nome = document.getElementById("nome").value;
-            let nick = document.getElementById("nick").value;
+            let nome2 = document.getElementById("nome").value;
+            let nick2 = document.getElementById("nick").value;
+            
+            document.getElementById("nickname").innerHTML = nome2.replace(nome2, `Ola, ${nick2}`);
 
-            let frase = (`Ola, ${nick}`)
-
-            document.getElementById('nickname').innerHTML = nome.replace(nome, `Ola, ${nick}`);
+            console.log(nome2);
+            console.log(nome2.replace(nome2, `Ola, ${nick}`));
         }
         
     </script>
