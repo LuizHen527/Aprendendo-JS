@@ -7,6 +7,63 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        let frutas = ['banana', 'maca', 'morango'];
+
+        console.log(frutas);
+
+        console.log(`Quantidades de frutas ${frutas.length}`);
+
+        frutas.push('uva');
+        frutas.push('mamao');
+        frutas.push('amora');
+
+        console.log(`Quantidade de frutas ${frutas.length}`);
+
+        frutas.sort();
+
+        console.log(frutas[0]);
+        console.log(frutas[2]);
+        console.log(frutas[5]);
+        //console.log(frutas[6]);
+
+        // for (let index = 0; index < frutas.length; index++) {
+        //     console.log(`Fruta: ${index + 1} ${frutas[index]}`);
+            
+        // }
+
+        frutas.forEach(function(fruta, i){
+            console.log(`Fruta ${i + 1} ${fruta}`);
+        });
+
+        let prateleira = ["Agua", "Suco", "Coca-cola", "Gatoraide", "H20", "Cerveja"];
+
+        let bebida = prateleira[4];
+
+        switch (bebida) {
+            case "Agua":
+                console.log(`Achei sua ${bebida}`);
+                break;
+            case "Suco":
+                console.log(`Achei sua ${bebida}`);
+                break;
+            case "Coca-cola":
+                console.log(`Achei sua ${bebida}`);
+                break;
+            case "Gatoraide":
+                console.log(`Achei sua ${bebida}`);
+                break;
+            case "H20":
+                console.log(`Achei sua ${bebida}`);
+                break;
+            case "Cerveja":
+                console.log(`Achei sua ${bebida}`);
+                break;
+        
+            default:
+                console.log(`Nao temos essa bebida`);
+                break;
+        }
+    </script>
 </body>
 </html>

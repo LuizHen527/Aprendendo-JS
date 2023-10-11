@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Objeto literal
+        let luiz = {
+            nome : 'Luiz',
+            sobrenome : 'Henrique',
+            idade : 20
+        }
+
+        luiz.cfp = '123454654';
+
+        //Objeto tradicional
+        let carlos = new Object();
+        carlos.nome = 'Carlos';
+        carlos.sobrenome = 'Roque';
+
+
+        //Exercicio fixacao:
+
+        let pessoas = [];
+
+        pessoas.push(luiz);
+        pessoas.push(carlos);
+
+        pessoas.forEach(function(pessoa, i){
+            console.log(`Pessoa ${i + 1} ${pessoa.nome}`);
+        })
+
+        console.log(luiz);
+        console.log(carlos);
+    </script>
+</body>
+</html>
