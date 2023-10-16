@@ -1,6 +1,6 @@
+const arrPessoas = []; //array vazio
 
-
-function calcular(){
+function calcular(event){
     alert('A funcao esta funcionando');
     event.preventDefault();
 
@@ -10,21 +10,30 @@ function calcular(){
 
     if(isNaN(altura) || isNaN(peso) || nome.length == 0){
         alert('Coloque os dados corretamente');
-        return;
+        return; // Para a funcao
     }
 
     //Calcular imc
 
     const imc = calcularImc(altura, peso);
 
-    alert(`Situacao: ${retornaSituacao(imc)}`);
+    const situacao = retornaSituacao(imc);
 
-    console.log(nome);
-    console.log(altura);
-    console.log(peso);
-    console.log(imc);
+    alert(`Situacao: ${situacao}`);
 
+    const pessoa = {
+        peso,
+        altura,
+        nome,
+        imc,
+        situacao
+    }
 
+    arrPessoas.push(pessoa);
+
+    listarPessoas();
+
+    console.log(pessoa);
 }
 
 function calcularImc(altura, peso){
@@ -53,4 +62,25 @@ function retornaSituacao(imc){
     } 
 
     return situacao;
+}
+
+function listarPessoas(){
+    let template = '';
+    
+    arrPessoas.forEach((p) => {
+
+        template += `
+        <tr>
+        <td data-cell="nome">${p.nome}</td>
+        <td data-cell="altura">${p.altura}</td>
+        <td data-cell="peso">${p.peso}</td>
+        <td data-cell="valor do IMC">${p.imc}</td>
+        <td data-cell="classificação do IMC">${p.situacao}</td>
+        <td data-cell="data de cadastro">19/06/2023 21:27</td>
+    </tr>`;
+    })
+
+    console.log(arrPessoas);
+
+    document.getElementById('corpo-tabela').innerHTML = template;
 }
