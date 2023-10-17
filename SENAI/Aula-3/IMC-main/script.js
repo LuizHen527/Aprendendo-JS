@@ -1,7 +1,6 @@
 const arrPessoas = []; //array vazio
 
 function calcular(event){
-    alert('A funcao esta funcionando');
     event.preventDefault();
 
     let nome = document.getElementById('nome').value.trim();
@@ -19,8 +18,6 @@ function calcular(event){
 
     const situacao = retornaSituacao(imc);
 
-    alert(`Situacao: ${situacao}`);
-
     const pessoa = {
         peso,
         altura,
@@ -28,6 +25,11 @@ function calcular(event){
         imc,
         situacao
     }
+
+    const dt = new Date();
+    const dtCadastro = `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+
+    pessoa.dtCad = dtCadastro;
 
     arrPessoas.push(pessoa);
 
@@ -76,7 +78,7 @@ function listarPessoas(){
         <td data-cell="peso">${p.peso}</td>
         <td data-cell="valor do IMC">${p.imc}</td>
         <td data-cell="classificação do IMC">${p.situacao}</td>
-        <td data-cell="data de cadastro">19/06/2023 21:27</td>
+        <td data-cell="data de cadastro">${p.dtCad}</td>
     </tr>`;
     })
 
