@@ -10,19 +10,34 @@
     <script>
         const url = "https://viacep.com.br/ws/03209000/json"
 
-        fetch(url)
-        .then((resposta) => {
-            //objeto promise resolvido (headers, body, others)
-            return resposta.json();
-        })
-        .then( (dados) => {
-            console.log(`
-                Endereco: ${dados.logradouro}
-                Cidade: ${dados.localidade}
-                Estado: ${dados.uf}
-            `);
-        })
-        .catch();
+        // fetch(url)
+        // .then((resposta) => {
+        //     //objeto promise resolvido (headers, body, others)
+        //     return resposta.json();
+        // })
+        // .then( (dados) => {
+        //     console.log(`
+        //         Endereco: ${dados.logradouro}
+        //         Cidade: ${dados.localidade}
+        //         Estado: ${dados.uf}
+        //     `);
+        // })
+        // .catch();
+
+        async function chamarApi(endereco){
+            try{
+                const promise = await fetch(endereco);
+                const dados = await promise.json();
+                console.log(dados);
+            } catch (e){
+                console.log("Deu ruim na API");
+            }
+        }
+
+        chamarApi(url);
     </script>
 </body>
 </html>
+
+<!-- pesquisar promise em js 
+ler artigo do professor -->
