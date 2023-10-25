@@ -8,9 +8,22 @@
 </head>
 <body>
     <form onsubmit="cadastrar()">
+        <label for="nome">Nome</label>
+        <input type="text" placeholder="Digite seu nome" id="nome">
+        <br/>
+        <label for="email">Email</label>
+        <input type="email" placeholder="Digite seu email" id="email">
+        <br/>
+        
+
+
         <label for="cep">CEP</label>
         <input type="number" placeholder="Digite seu cep" onblur="buscarEndereco(this.value)" id="cep">
         <span id="not-found"></span>
+        <br/>
+
+        <label for="numero">Numero</label>
+        <input type="number" placeholder="Digite seu numero" id="numero">
         <br/>
         
         <label for="endereco">Endereco</label>
