@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/* Container */
+
+.card-evento {
+    display: flex;
+    justify-content: space-evenly;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #821B47;
+    flex-direction: column;
+    border-radius: 8px;
+    
+}
+
+/* Texto */
+.card-evento__titulo {
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.card-evento__texto {
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+/* button */
+
+.card-evento__button {
+    text-align: center;
+    color: #B51D44;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.card-evento__button--bloqueado {
+    color: gray;
+    cursor: not-allowed;
+}
